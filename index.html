@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07162d">
+  <meta name="description" content="PhishSwipe is a practical, swipe-based phishing awareness game. Learn to spot suspicious emails and text messages through realistic scenarios and instant feedback.">
+  <title>PhishSwipe — Learn to spot phishing before it catches you</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="PhishSwipe home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img"><path d="M24 3 42 10v12c0 11.5-7.4 19.3-18 23C13.4 41.3 6 33.5 6 22V10L24 3Z" fill="currentColor"/><path d="M24 8 37 13v9c0 8.5-5.2 14.8-13 18-7.8-3.2-13-9.5-13-18v-9l13-5Z" fill="#0D2C55"/><path d="M24 13a7.2 7.2 0 0 0-4.2 13.1V34h8.4v-7.9A7.2 7.2 0 0 0 24 13Z" fill="#55D6E8"/><circle cx="24" cy="20.1" r="2.2" fill="#E8FCFF"/></svg>
+        </span>
+        <span class="brand-copy"><strong>Phish<span>Swipe</span></strong><small>Learn to spot phishing before it catches you.</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home" data-route="home" class="nav-link active">Home</a>
+        <a href="#play" data-route="play" class="nav-link">Play</a>
+        <a href="#tips" data-route="tips" class="nav-link">Tips</a>
+        <a href="#leaderboard" data-route="leaderboard" class="nav-link">Leaderboard</a>
+        <a href="#about" data-route="about" class="nav-link">About</a>
+      </nav>
+      <button class="profile-chip" id="profile-button" type="button" aria-label="Edit player name">
+        <span class="avatar" id="avatar-initials">L</span>
+        <span class="profile-name">Hi, <strong id="profile-name">Learner</strong></span>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+      </button>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <!-- HOME -->
+      <section class="page active" id="page-home" data-page="home">
+        <div class="page-heading">
+          <div><p class="eyebrow">YOUR CYBER AWARENESS TRAINING</p><h1>Trust your instincts. <span>Check the clues.</span></h1><p class="page-subtitle">A few smart swipes can build habits that protect you every day.</p></div>
+          <div class="heading-badge"><span class="live-dot"></span> TRAINING MODE</div>
+        </div>
+        <div class="home-grid">
+          <aside class="panel progress-panel">
+            <div class="panel-title-row"><h2>Your progress</h2><span class="level-pill" id="level-pill">Level 1 <span>›</span></span></div>
+            <div class="progress-ring-wrap"><div class="progress-ring" id="progress-ring"><div><strong id="home-score">0</strong><small>POINTS</small></div></div></div>
+            <div class="progress-stats">
+              <div class="stat-line"><span class="stat-icon target-icon">◎</span><div><small>Best accuracy</small><strong id="home-accuracy">—</strong></div></div>
+              <div class="stat-line"><span class="stat-icon flame-icon">ϟ</span><div><small>Best streak</small><strong><span id="home-streak">0</span> <em>🔥</em></strong></div></div>
+            </div>
+            <div class="panel-divider"></div>
+            <h3>Keep going!</h3><p class="muted">Practice a little at a time. Every scenario is a chance to sharpen your eye.</p>
+            <div class="mini-achievement"><span class="achievement-icon">✦</span><span><strong id="home-runs">Ready for your first round?</strong><small id="home-runs-caption">Your training history stays on this device.</small></span></div>
+          </aside>
+
+          <section class="hero-game-card" aria-label="Start a phishing awareness round">
+            <div class="hero-card-top"><span class="tag tag-cyan">THE DAILY CHECK</span><span class="round-duration">◷ &nbsp; 3–5 MIN</span></div>
+            <div class="hero-illustration" aria-hidden="true">
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+              <div class="mail-graphic"><div class="mail-top"></div><div class="mail-flap"></div><div class="mail-shield"><svg viewBox="0 0 48 48"><path d="M24 4 40 10v11c0 10-6.5 17-16 21C14.5 38 8 31 8 21V10L24 4Z"/><path d="m17 23 5 5 10-11"/></svg></div><span class="mail-alert">!</span></div>
+              <span class="float-chip chip-left">✉ &nbsp; MESSAGE</span><span class="float-chip chip-right">✓ &nbsp; VERIFY</span>
+            </div>
+            <div class="hero-copy"><p class="eyebrow">CAN YOU SPOT THE RED FLAGS?</p><h2>Phish or legit?</h2><p>Review realistic emails and text messages. Swipe left for phishing, right for safe.</p>
+              <div class="hero-meta"><span>◈ 10 scenarios</span><span>✦ Instant explanations</span><span>↗ No real links</span></div>
+              <button class="primary-button" id="home-start-button" type="button">Start a training round <span>→</span></button>
+            </div>
+          </section>
+
+          <aside class="panel clues-panel">
+            <div class="clue-heading"><span class="bulb-icon">♧</span><div><h2>Spot the clues</h2><p class="muted">Look for these common signs of phishing.</p></div></div>
+            <div class="clue-list">
+              <div class="clue-item"><span class="clue-icon blue">✉</span><div><strong>Check sender address</strong><small>Look for misspellings or unusual domains.</small></div></div>
+              <div class="clue-item"><span class="clue-icon red">!</span><div><strong>Beware urgent language</strong><small>“Act now” and “within 24 hours” can be red flags.</small></div></div>
+              <div class="clue-item"><span class="clue-icon teal">↗</span><div><strong>Hover over links</strong><small>Check where a link really goes before clicking.</small></div></div>
+              <div class="clue-item"><span class="clue-icon purple">⌁</span><div><strong>Unexpected attachments</strong><small>Be cautious with unsolicited files.</small></div></div>
+            </div>
+            <a class="text-link" href="#tips" data-route="tips">Explore all safety tips <span>→</span></a>
+          </aside>
+        </div>
+        <div class="bottom-note"><span class="note-shield">⬡</span><div><strong>Real skills. A safer you.</strong><p>PhishSwipe helps you build real-world cyber security skills through hands-on practice.</p></div><span class="note-spark">✦</span></div>
+      </section>
+
+      <!-- PLAY -->
+      <section class="page" id="page-play" data-page="play">
+        <div class="play-heading"><div><p class="eyebrow">INTERACTIVE CHALLENGE</p><h1>Make the call.</h1><p class="page-subtitle">Swipe left to flag phishing. Swipe right if the message is safe.</p></div><div class="play-controls"><label class="filter-label" for="scenario-filter">Scenario type</label><select id="scenario-filter" class="filter-select"><option value="all">Email + SMS</option><option value="email">Emails only</option><option value="sms">Text messages only</option></select><button class="icon-button" id="restart-button" type="button" title="Restart round" aria-label="Restart round">↻</button></div></div>
+        <div class="play-layout">
+          <aside class="panel play-progress">
+            <div class="panel-title-row"><h2>Your progress</h2><span class="level-pill">Level 1 <span>›</span></span></div>
+            <div class="score-block"><small>SCORE</small><div><strong id="live-score">0</strong><span> / <span id="max-score">1500</span></span></div></div>
+            <div class="streak-block"><span class="streak-symbol">ϟ</span><div><small>STREAK</small><strong id="live-streak">0 <em>🔥</em></strong></div></div>
+            <div class="round-progress"><div class="round-progress-head"><span>ROUND PROGRESS</span><strong id="round-count">0 / 10</strong></div><div class="progress-track"><span id="round-progress-fill"></span></div></div>
+            <div class="panel-divider"></div><h3>How to play</h3><div class="how-line"><span class="how-arrow red-arrow">←</span><p><strong>Swipe left</strong><small>Flag phishing</small></p></div><div class="how-line"><span class="how-arrow green-arrow">→</span><p><strong>Swipe right</strong><small>Mark as safe</small></p></div>
+            <p class="tiny-muted">Keyboard: ← phishing · → safe</p>
+          </aside>
+
+          <section class="game-stage" aria-label="Message decision game">
+            <div class="stage-topline"><span class="stage-label" id="stage-channel">INCOMING EMAIL</span><span class="stage-counter" id="stage-counter">01 <i>/</i> 10</span></div>
+            <div class="card-stack" id="card-stack"><div class="message-card" id="message-card" aria-live="polite"></div></div>
+            <div class="decision-row">
+              <button class="decision-button decision-phish" id="phish-button" type="button" aria-label="This is phishing"><span class="decision-symbol">!</span><span>PHISHING</span><small>← LEFT</small></button>
+              <div class="swipe-hint"><strong>Swipe to decide</strong><small>or use the buttons</small></div>
+              <button class="decision-button decision-safe" id="safe-button" type="button" aria-label="This message is safe"><span class="decision-symbol">✓</span><span>SAFE</span><small>RIGHT →</small></button>
+            </div>
+            <div class="dot-pagination" id="dot-pagination" aria-label="Scenario progress"></div>
+          </section>
+
+          <aside class="panel play-clues">
+            <div class="clue-heading"><span class="bulb-icon">♧</span><div><h2>Spot the clues</h2><p class="muted">A quick checklist before you decide.</p></div></div>
+            <div class="clue-list compact">
+              <div class="clue-item"><span class="clue-icon blue">✉</span><div><strong>Sender address</strong><small>Does the domain match who they claim to be?</small></div></div>
+              <div class="clue-item"><span class="clue-icon red">!</span><div><strong>Urgent language</strong><small>Are they pressuring you to act quickly?</small></div></div>
+              <div class="clue-item"><span class="clue-icon teal">↗</span><div><strong>Links and requests</strong><small>Are they asking for a password or payment?</small></div></div>
+              <div class="clue-item"><span class="clue-icon purple">⌁</span><div><strong>Unexpected files</strong><small>Were you expecting this attachment?</small></div></div>
+            </div>
+            <div class="safe-reminder"><span>⬡</span><div><strong>Pause before you click</strong><small>When in doubt, verify through a channel you already trust.</small></div></div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- TIPS -->
+      <section class="page" id="page-tips" data-page="tips">
+        <div class="page-heading"><div><p class="eyebrow">BUILD YOUR DEFENCES</p><h1>Small checks. <span>Big difference.</span></h1><p class="page-subtitle">Use this checklist whenever a message asks you to act, click, pay or share information.</p></div><div class="heading-badge"><span class="live-dot"></span> QUICK GUIDE</div></div>
+        <div class="tips-grid">
+          <article class="tip-card"><span class="tip-number">01</span><span class="tip-illustration blue">@</span><h2>Inspect the sender</h2><p>Read the full email address or phone number. A familiar display name does not prove who sent the message.</p><div class="tip-example"><strong>Check:</strong> spelling, extra words, unexpected domains and unusual reply-to addresses.</div></article>
+          <article class="tip-card"><span class="tip-number">02</span><span class="tip-illustration coral">!</span><h2>Slow down urgency</h2><p>Scammers create pressure so you react before thinking. Unexpected threats, prizes and deadlines deserve extra scrutiny.</p><div class="tip-example"><strong>Check:</strong> “account suspended”, “act immediately” and “last warning”.</div></article>
+          <article class="tip-card"><span class="tip-number">03</span><span class="tip-illustration teal">↗</span><h2>Verify the destination</h2><p>Do not trust a link just because its text looks familiar. Navigate to the organisation's known website yourself.</p><div class="tip-example"><strong>Check:</strong> misspelled domains, shortened links and unexpected sign-in pages.</div></article>
+          <article class="tip-card"><span class="tip-number">04</span><span class="tip-illustration violet">⌁</span><h2>Treat attachments carefully</h2><p>Unexpected files can contain harmful content or lead to credential-stealing pages. Confirm with the sender first.</p><div class="tip-example"><strong>Check:</strong> unexpected invoices, delivery notices and unfamiliar file types.</div></article>
+          <article class="tip-card"><span class="tip-number">05</span><span class="tip-illustration gold">◇</span><h2>Question the request</h2><p>Legitimate organisations should not ask you to reveal passwords, one-time codes or sensitive details through an unsolicited message.</p><div class="tip-example"><strong>Check:</strong> requests for passwords, MFA codes, bank details or gift cards.</div></article>
+          <article class="tip-card"><span class="tip-number">06</span><span class="tip-illustration green">✓</span><h2>Verify independently</h2><p>Use a phone number, app or website you already know. Do not use contact details supplied in the suspicious message.</p><div class="tip-example"><strong>Remember:</strong> report suspicious messages using your organisation's process.</div></article>
+        </div>
+        <div class="tips-callout"><span class="callout-icon">⬡</span><div><strong>The safest response is often to pause.</strong><p>Do not reply, open attachments or follow links while you are unsure. Verify independently first.</p></div><a href="#play" class="secondary-button" data-route="play">Practise these skills <span>→</span></a></div>
+      </section>
+
+      <!-- LEADERBOARD -->
+      <section class="page" id="page-leaderboard" data-page="leaderboard">
+        <div class="page-heading"><div><p class="eyebrow">A LITTLE FRIENDLY COMPETITION</p><h1>Training <span>high scores.</span></h1><p class="page-subtitle">Your best rounds, saved locally on this device.</p></div><div class="heading-badge"><span class="live-dot"></span> LOCAL LEADERBOARD</div></div>
+        <div class="leaderboard-layout"><section class="panel leaderboard-panel"><div class="panel-title-row"><h2>Top performances</h2><span class="level-pill">Personal bests</span></div><div class="leaderboard-table-wrap"><table class="leaderboard-table"><thead><tr><th>RANK</th><th>PLAYER</th><th>ACCURACY</th><th>POINTS</th></tr></thead><tbody id="leaderboard-body"><tr><td colspan="4" class="empty-state">No rounds completed yet. Play a round to add your first score.</td></tr></tbody></table></div><p class="tiny-muted">This leaderboard is stored in your browser only. It is not a global or multiplayer ranking.</p></section><aside class="panel rank-panel"><div class="rank-emblem">✦</div><p class="eyebrow">YOUR CURRENT RANK</p><h2 id="current-rank">New recruit</h2><p class="muted" id="rank-description">Complete a training round to earn your first cyber awareness rank.</p><div class="rank-progress-track"><span id="rank-progress-fill"></span></div><small id="rank-progress-label">0 points earned</small><a href="#play" class="primary-button compact-button">Play a round <span>→</span></a></aside></div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="page" id="page-about" data-page="about">
+        <div class="page-heading"><div><p class="eyebrow">ABOUT PHISHSWIPE</p><h1>Make awareness <span>stick.</span></h1><p class="page-subtitle">Cybersecurity learning should be practical, memorable and easy to practise.</p></div><div class="heading-badge"><span class="live-dot"></span> LEARN BY DOING</div></div>
+        <div class="about-layout"><section class="about-intro panel"><div class="about-shield">⬡</div><h2>Phish or Legit?</h2><p>PhishSwipe is a gamified phishing-awareness web application. Users review realistic email and SMS scenarios, swiping left to flag phishing and right to mark legitimate messages as safe. After each decision, the app explains the warning signs and the reasoning behind the correct answer.</p><p>It turns passive advice into short, repeatable practice. It is an educational tool—not a spam filter, threat-detection service or substitute for an organisation's security controls.</p></section><section class="about-principles"><article class="principle-card"><span>01</span><div><h3>Realistic scenarios</h3><p>Practise with examples inspired by common email and SMS social-engineering patterns.</p></div></article><article class="principle-card"><span>02</span><div><h3>Immediate feedback</h3><p>Each answer is followed by clear explanations and highlighted clues.</p></div></article><article class="principle-card"><span>03</span><div><h3>Safe by design</h3><p>All scenario domains are fictional placeholders. This demo does not send messages or open suspicious links.</p></div></article><article class="principle-card"><span>04</span><div><h3>Room to grow</h3><p>The scenario dataset and game engine are structured to support future lessons, accounts and shared leaderboards.</p></div></article></section></div>
+        <section class="sources-panel panel"><p class="eyebrow">RESEARCH REFERENCED IN THE PROJECT BRIEF</p><h2>Why gamified practice?</h2><p class="muted">The original project brief points to the following reading. These references are reproduced as supplied; they have not been independently verified as part of this demo.</p><ol><li><a href="https://www.threatlocker.com/blog/gamification-in-cybersecurity-how-game-based-training-improves-security-awareness" target="_blank" rel="noopener noreferrer">Gamification in cybersecurity: How game-based training improves security awareness</a> — ThreatLocker.</li><li><a href="https://www.scientificamerican.com/article/can-phishing-be-foiled/" target="_blank" rel="noopener noreferrer">Can Phishing Be Foiled?</a> — Lorrie Faith Cranor, Scientific American (2008).</li><li><a href="https://www.ijcaonline.org/archives/volume187/number132/galinki-ijca-2026-69b0236efc73.pdf" target="_blank" rel="noopener noreferrer">A Gamified Web-Based Approach to Improving Phishing and Social Engineering Attack Recognition Skills</a> — Galinki, Amer &amp; Kaphle (2026), as cited in the supplied brief.</li></ol></section>
+      </section>
+    </main>
+    <footer class="site-footer"><span>© <span id="footer-year"></span> PhishSwipe</span><span>Learn safely. Think before you click. <b>⬡</b></span><span>Demo mode · No real messages or links</span></footer>
+  </div>
+
+  <!-- Feedback modal -->
+  <div class="modal-backdrop" id="feedback-modal" hidden>
+    <section class="feedback-modal" role="dialog" aria-modal="true" aria-labelledby="feedback-title" aria-describedby="feedback-description">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Close feedback">×</button>
+      <div class="feedback-status" id="feedback-status">✓</div>
+      <p class="eyebrow" id="feedback-kicker">GOOD CATCH</p>
+      <h2 id="feedback-title">That's phishing.</h2>
+      <p class="feedback-summary" id="feedback-description"></p>
+      <div class="feedback-evidence"><h3><span>✦</span> Red flags to notice</h3><div id="feedback-clues"></div></div>
+      <div class="feedback-takeaway"><strong>What to do in real life</strong><p id="feedback-action"></p></div>
+      <div class="feedback-footer"><span class="points-earned" id="feedback-points">+100 points</span><button class="primary-button" id="next-button" type="button">Next message <span>→</span></button></div>
+    </section>
+  </div>
+
+  <!-- End of round modal -->
+  <div class="modal-backdrop" id="results-modal" hidden>
+    <section class="results-modal" role="dialog" aria-modal="true" aria-labelledby="results-title">
+      <button class="modal-close" id="results-close" type="button" aria-label="Close results">×</button>
+      <div class="results-trophy">✦</div><p class="eyebrow">ROUND COMPLETE</p><h2 id="results-title">You're getting sharper.</h2><p class="muted" id="results-message">Every decision is practice.</p>
+      <div class="results-score-grid"><div><strong id="result-score">0</strong><small>POINTS</small></div><div><strong id="result-accuracy">0%</strong><small>ACCURACY</small></div><div><strong id="result-streak">0</strong><small>BEST STREAK</small></div></div>
+      <div class="result-breakdown"><div><span>Email accuracy</span><strong id="result-email">—</strong></div><div><span>SMS accuracy</span><strong id="result-sms">—</strong></div><div><span>Correct decisions</span><strong id="result-correct">0 / 10</strong></div><div><span>Rank earned</span><strong id="result-rank">New recruit</strong></div></div>
+      <div class="results-actions"><button class="primary-button" id="play-again-button" type="button">Play again <span>→</span></button><button class="secondary-button" id="view-scores-button" type="button">View leaderboard</button></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/scenarios.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
