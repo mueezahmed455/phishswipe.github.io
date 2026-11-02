@@ -1,8 +1,8 @@
-# PhishSwipe
+# catphish
 
 **Learn to spot phishing before it catches you.**
 
-PhishSwipe is a responsive, browser-based phishing-awareness game. Players review fictional email and SMS scenarios, swipe left for phishing or right for safe, and receive immediate explanations that identify the warning signs.
+catphish is a responsive, browser-based phishing-awareness game. Players review fictional email and SMS scenarios, swipe left for phishing or right for safe, and receive immediate explanations that identify the warning signs.
 
 ## What's included
 
@@ -31,7 +31,7 @@ On Windows, `py -m http.server 4173` is an equivalent command. You can also open
 ## Project structure
 
 ```text
-phishswipe/
+catphish/
 ├── index.html              # Application structure and all views/dialogs
 ├── styles.css              # Responsive visual system and interactions
 ├── js/
