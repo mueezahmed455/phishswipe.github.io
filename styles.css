@@ -10,3 +10,68 @@
 @media(max-width:430px){.main-nav{gap:8px}.nav-link{font-size:10px}.brand-copy small{max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hero-game-card{padding:17px}.hero-illustration{height:163px}.float-chip{font-size:8px;padding:7px 9px}.chip-left{left:0}.chip-right{right:0}.hero-copy h2{font-size:23px}.hero-meta{gap:10px;font-size:8px}.progress-panel,.clues-panel,.play-progress,.play-clues{padding:17px}.clues-panel .clue-list,.play-clues .clue-list{grid-template-columns:1fr}.clue-item{min-height:54px}.card-stack{height:395px}.email-toolbar{padding:0 12px}.email-meta{padding:11px 12px}.email-subject{padding:11px 12px;font-size:14px}.message-body{padding:0 12px 12px;font-size:10px;line-height:1.55}.message-footer{margin:0 12px}.email-recipient{margin-left:45px}.sender-time{font-size:8px}.sms-card{padding:13px}.decision-symbol{width:55px;height:55px;border-width:4px}.decision-row{gap:4px}.decision-button{width:70px}.swipe-hint{min-width:75px}.tips-grid{grid-template-columns:1fr}.tip-card{min-height:0}.tips-callout .secondary-button{margin-left:0;width:100%}.feedback-modal,.results-modal{padding:23px 18px}.feedback-footer{align-items:flex-start;flex-direction:column}.feedback-footer .primary-button{width:100%}.results-actions{flex-direction:column}.site-footer{font-size:8px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 .noscript-message{margin:24px auto;padding:16px 20px;max-width:680px;background:#fff4e5;border:1px solid #f2c98b;border-radius:12px;color:#68430e;text-align:center;font-weight:600}
+
+/* Theme preference */
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:0 12px;border:1px solid #dfe8f2;border-radius:999px;background:#fff;color:#344b69;font:600 11px 'DM Sans',sans-serif;cursor:pointer;white-space:nowrap}
+.theme-toggle:hover{background:#f3f8fc}
+.theme-toggle:focus-visible{outline:3px solid #69b9e8;outline-offset:2px}
+.theme-toggle span[aria-hidden="true"]{font-size:16px;line-height:1}
+html[data-theme="dark"]{color-scheme:dark;--ink:#e4edf8;--muted:#a9b8ca;--line:#2a3a50;--pale:#152235;--white:#111d2e;--shadow:0 18px 50px rgba(0,0,0,.28)}
+html[data-theme="dark"] body{background:#0b1320;color:#e4edf8}
+html[data-theme="dark"] .topbar{background:rgba(13,24,39,.97);border-color:#26364a}
+html[data-theme="dark"] .brand,html[data-theme="dark"] .page-heading h1,html[data-theme="dark"] .play-heading h1{color:#e4edf8}
+html[data-theme="dark"] .brand-copy small,html[data-theme="dark"] .page-subtitle{color:#a9b8ca}
+html[data-theme="dark"] .nav-link{color:#b8c6d7}
+html[data-theme="dark"] .nav-link:hover,html[data-theme="dark"] .nav-link.active{color:#79c5ff}
+html[data-theme="dark"] .profile-chip,html[data-theme="dark"] .theme-toggle{background:#17263a;color:#dce8f5;border-color:#30435b}
+html[data-theme="dark"] .profile-chip:hover,html[data-theme="dark"] .theme-toggle:hover{background:#20334b}
+html[data-theme="dark"] .profile-name strong{color:#e4edf8}
+html[data-theme="dark"] .panel,html[data-theme="dark"] .heading-badge,html[data-theme="dark"] .message-card,html[data-theme="dark"] .feedback-modal,html[data-theme="dark"] .results-modal{background:#111d2e;border-color:#2a3a50;color:#e4edf8}
+html[data-theme="dark"] .panel h2,html[data-theme="dark"] .panel h3,html[data-theme="dark"] .panel strong,html[data-theme="dark"] .message-card strong,html[data-theme="dark"] .feedback-modal h2,html[data-theme="dark"] .feedback-modal h3,html[data-theme="dark"] .results-modal h2{color:#e4edf8}
+html[data-theme="dark"] .muted,html[data-theme="dark"] .tiny-muted,html[data-theme="dark"] .panel small,html[data-theme="dark"] .result-breakdown>div{color:#a9b8ca}
+html[data-theme="dark"] .clue-item,html[data-theme="dark"] .email-toolbar,html[data-theme="dark"] .email-subject,html[data-theme="dark"] .message-footer,html[data-theme="dark"] .mini-achievement,html[data-theme="dark"] .safe-reminder,html[data-theme="dark"] .tip-example{background:#19283c;border-color:#2a3a50;color:#dbe7f5}
+html[data-theme="dark"] .clue-item small,html[data-theme="dark"] .clue-item strong,html[data-theme="dark"] .mini-achievement strong,html[data-theme="dark"] .mini-achievement small{color:#c4d1e0}
+html[data-theme="dark"] .progress-ring:before{background:#111d2e}
+html[data-theme="dark"] .progress-ring{background:conic-gradient(#25b8c5 0deg,#2871d3 0deg,#2a3a50 0deg)}
+html[data-theme="dark"] .progress-ring strong,html[data-theme="dark"] .stat-line strong,html[data-theme="dark"] .score-block strong,html[data-theme="dark"] .streak-block strong,html[data-theme="dark"] .round-progress-head strong,html[data-theme="dark"] .how-line strong,html[data-theme="dark"] .stage-counter,html[data-theme="dark"] .result-breakdown strong{color:#e4edf8}
+html[data-theme="dark"] .card-stack:before{background:#26364a}
+html[data-theme="dark"] .card-stack:after{background:#1a2a3f}
+html[data-theme="dark"] .filter-select,html[data-theme="dark"] .icon-button,html[data-theme="dark"] .leaderboard-table{background:#17263a;color:#dce8f5;border-color:#30435b}
+html[data-theme="dark"] .leaderboard-table th,html[data-theme="dark"] .leaderboard-table td{border-color:#2a3a50;color:#dce8f5}
+html[data-theme="dark"] .level-pill{background:#1a3553;color:#9bcaff}
+html[data-theme="dark"] .panel-divider,html[data-theme="dark"] .streak-block{border-color:#2a3a50}
+html[data-theme="dark"] .site-footer{color:#9eafc3;border-color:#26364a}
+html[data-theme="dark"] .bottom-note{background:linear-gradient(100deg,#153238,#172d42);border-color:#24505a;color:#d5eff1}
+html[data-theme="dark"] .bottom-note p{color:#a9c5ce}
+html[data-theme="dark"] .tip-card,html[data-theme="dark"] .principle-card{background:#111d2e;border-color:#2a3a50;color:#e4edf8}
+html[data-theme="dark"] .tip-card h2,html[data-theme="dark"] .principle-card h3{color:#e4edf8}
+html[data-theme="dark"] .tip-card p,html[data-theme="dark"] .principle-card p{color:#a9b8ca}
+html[data-theme="dark"] .tip-example strong{color:#e4edf8}
+html[data-theme="dark"] .tips-callout{background:linear-gradient(100deg,#153238,#172d42);border-color:#24505a;color:#d5eff1}
+html[data-theme="dark"] .tips-callout strong{color:#d5eff1}
+html[data-theme="dark"] .tips-callout p{color:#a9c5ce}
+html[data-theme="dark"] .tips-callout .secondary-button{background:#1a2a3f;border-color:#38516d;color:#cde2f8}
+html[data-theme="dark"] .tips-callout .secondary-button:hover{background:#223852}
+html[data-theme="dark"] .email-toolbar{background:#17263a;border-color:#2a3a50;color:#c6d5e6}
+html[data-theme="dark"] .email-meta{border-color:#2a3a50}
+html[data-theme="dark"] .sender-name,html[data-theme="dark"] .email-subject{color:#e4edf8}
+html[data-theme="dark"] .sender-address,html[data-theme="dark"] .sender-time,html[data-theme="dark"] .email-recipient{color:#a9b8ca}
+html[data-theme="dark"] .message-body{color:#d0dced}
+html[data-theme="dark"] .message-footer{border-color:#2a3a50;color:#a9b8ca}
+html[data-theme="dark"] .sms-card{background:linear-gradient(180deg,#142339,#111d2e);color:#e4edf8}
+html[data-theme="dark"] .sms-header{border-color:#2a3a50}
+html[data-theme="dark"] .sms-contact strong{color:#e4edf8}
+html[data-theme="dark"] .sms-contact small,html[data-theme="dark"] .sms-date,html[data-theme="dark"] .sms-time{color:#a9b8ca}
+html[data-theme="dark"] .sms-bubble{background:#20324a;color:#dce8f5}
+html[data-theme="dark"] .sms-safety-note{background:#19283c;color:#afc0d2}
+html[data-theme="dark"] .modal-close{background:#20324a;color:#c9d7e6}
+html[data-theme="dark"] .feedback-summary{color:#b4c2d2}
+html[data-theme="dark"] .feedback-evidence{background:#19283c;border-color:#2a3a50;color:#e4edf8}
+html[data-theme="dark"] .feedback-evidence h3{color:#e4edf8}
+html[data-theme="dark"] .feedback-clue{border-color:#304159}
+html[data-theme="dark"] .feedback-clue strong{color:#e4edf8}
+html[data-theme="dark"] .feedback-clue p{color:#b4c2d2}
+html[data-theme="dark"] .feedback-takeaway{background:#153238;color:#d5eff1}
+html[data-theme="dark"] .feedback-takeaway strong{color:#d5eff1}
+html[data-theme="dark"] .feedback-takeaway p{color:#a9c5ce}
+@media(max-width:760px){.theme-toggle{margin-left:auto;margin-right:8px;min-height:34px}.profile-chip{order:2}.theme-toggle{order:2}.main-nav{order:3}}

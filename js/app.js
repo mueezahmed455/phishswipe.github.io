@@ -3,6 +3,7 @@
 
   const scenarios = Array.isArray(window.PHISHSWIPE_SCENARIOS) ? window.PHISHSWIPE_SCENARIOS : [];
   const STORAGE_KEY = 'phishswipe.local.v1';
+  const THEME_KEY = 'phishswipe.theme';
   const ROUND_LENGTH = 10;
   const MAX_ROUND_SCORE = ROUND_LENGTH * 100 + Array.from({ length: ROUND_LENGTH }, (_, index) => Math.min(index * 10, 50)).reduce((total, points) => total + points, 0);
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -29,8 +30,22 @@
     resultEmail: $('#result-email'), resultSms: $('#result-sms'), resultCorrect: $('#result-correct'),
     resultRank: $('#result-rank'), resultsTitle: $('#results-title'), resultsMessage: $('#results-message'),
     playAgain: $('#play-again-button'), viewScores: $('#view-scores-button'), resultsClose: $('#results-close'),
-    leaderboardBody: $('#leaderboard-body'), toast: $('#toast')
+    leaderboardBody: $('#leaderboard-body'), toast: $('#toast'), themeToggle: $('#theme-toggle')
   };
+
+  function setTheme(theme, persist = true) {
+    const dark = theme === 'dark';
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    nodes.themeToggle.setAttribute('aria-pressed', String(dark));
+    nodes.themeToggle.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} theme`);
+    nodes.themeToggle.querySelector('.theme-toggle-label').textContent = dark ? 'Light' : 'Dark';
+    nodes.themeToggle.querySelector('[aria-hidden="true"]').textContent = dark ? '☀' : '☾';
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    if (themeColor) themeColor.content = dark ? '#0b1320' : '#07162d';
+    if (persist) {
+      try { localStorage.setItem(THEME_KEY, dark ? 'dark' : 'light'); } catch (_) { /* Theme still works for this visit. */ }
+    }
+  }
 
   function safeLoad() {
     try {
@@ -307,6 +322,7 @@
   }));
 
   nodes.homeStart.addEventListener('click', () => { startGame('all', true); setRouteHash('play'); });
+  nodes.themeToggle.addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
   nodes.scenarioFilter.addEventListener('change', () => startGame(nodes.scenarioFilter.value, false));
   nodes.restart.addEventListener('click', () => { startGame(nodes.scenarioFilter.value, false); showToast('New round started.'); });
   nodes.phish.addEventListener('click', () => submitAnswer('phishing'));
@@ -379,6 +395,9 @@
   });
 
   // Boot
+  let savedTheme = null;
+  try { savedTheme = localStorage.getItem(THEME_KEY); } catch (_) { /* Use system preference when storage is unavailable. */ }
+  setTheme(savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : 'light', false);
   safeLoad(); updateProfile(); renderHomeStats(); renderLeaderboard();
   $('#footer-year').textContent = String(new Date().getFullYear());
   const initialRoute = location.hash.replace('#', '');
