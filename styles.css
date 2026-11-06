@@ -81,10 +81,14 @@ html[data-theme="dark"] .feedback-takeaway p{color:#a9c5ce}
 .dark-logo{display:none}
 
 :root[data-theme="dark"] .light-logo,
-body[data-theme="dark"] .light-logo{
+body[data-theme="dark"] .light-logo,
+.dark .light-logo,
+body.dark-mode .light-logo {
     display:none;
 }
 :root[data-theme="dark"] .dark-logo,
-body[data-theme="dark"] .dark-logo{
+body[data-theme="dark"] .dark-logo,
+.dark .dark-logo,
+body.dark-mode .dark-logo {
     display:block;
 }
