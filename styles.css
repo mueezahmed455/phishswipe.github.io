@@ -75,3 +75,16 @@ html[data-theme="dark"] .feedback-takeaway{background:#153238;color:#d5eff1}
 html[data-theme="dark"] .feedback-takeaway strong{color:#d5eff1}
 html[data-theme="dark"] .feedback-takeaway p{color:#a9c5ce}
 @media(max-width:760px){.theme-toggle{margin-left:auto;margin-right:8px;min-height:34px}.profile-chip{order:2}.theme-toggle{order:2}.main-nav{order:3}}
+
+/* Logo swap (default light mode) */
+.light-logo{display:block}
+.dark-logo{display:none}
+
+:root[data-theme="dark"] .light-logo,
+body[data-theme="dark"] .light-logo{
+    display:none;
+}
+:root[data-theme="dark"] .dark-logo,
+body[data-theme="dark"] .dark-logo{
+    display:block;
+}
