@@ -5,7 +5,15 @@
   const STORAGE_KEY = 'phishswipe.local.v1';
   const THEME_KEY = 'phishswipe.theme';
   const ROUND_LENGTH = 10;
-  const MAX_ROUND_SCORE = ROUND_LENGTH * 100 + Array.from({ length: ROUND_LENGTH }, (_, index) => Math.min(index * 10, 50)).reduce((total, points) => total + points, 0);
+  function calculateMaxScore(questionCount) {
+    let total = 0;
+
+    for (let i = 0; i < questionCount; i++) {
+      total += 100 + Math.min(i * 10, 50);
+    }
+
+    return total;
+  }
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
@@ -142,7 +150,7 @@
     state.queue = shuffle(available).slice(0, Math.min(ROUND_LENGTH, available.length));
     state.index = 0; state.score = 0; state.streak = 0; state.bestStreak = 0;
     state.answers = []; state.active = true; state.awaitingFeedback = false;
-    $('#max-score').textContent = String(MAX_ROUND_SCORE);
+    $('#max-score').textContent = String(calculateMaxScore(state.queue.length));
     if (goToPlay) navigate('play'); else {
       state.route = 'play';
       nodes.pages.forEach(page => page.classList.toggle('active', page.dataset.page === 'play'));
